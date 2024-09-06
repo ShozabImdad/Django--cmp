@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+First App
+{% endblock %}
+
+
+{% block content %}
+<h1> First App | Homepage</h1>
+
+<div class = "h-56 grid grid-cols-3 gap-4 justify-center">
+    {% for jewel in jewels %}
+    <div class = 'bg-blue-900 p-10 rounded'>
+        <img class = "rounded shadow-lg" src="{{jewel.image.url}}" alt="">
+        <h3 class = "text-2xl font-bold">{{jewel.name}}</h3>
+        <a href="#">
+            <button type = "button" class = "inline-flex items-center w-[100%] justify-center px-4 py-2 border-transparent text-sm font-medium
+            rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                {{jewel.type}} - {{jewel.id}}
+            </button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
